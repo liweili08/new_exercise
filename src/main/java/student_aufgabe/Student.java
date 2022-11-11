@@ -1,5 +1,7 @@
 package student_aufgabe;
 
+import org.junit.Test;
+
 public class Student {
     //field
     int number; //Matrikelnummer
@@ -21,4 +23,20 @@ public class Student {
                 ", state=" + state +
                 ", score=" + score ;
     }
+
+    public Student getStudent(int a)
+    {
+        if(a>0)
+        {
+            return new Student();
+        }
+        return null;
+    }
+
+    @Test
+    public void test()
+    {
+
+    }
+
 }
