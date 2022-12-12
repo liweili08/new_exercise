@@ -1,10 +1,13 @@
 package collection_list;
+
 import collection_api.PersonForCollection;
 import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import static java.lang.Integer.valueOf;
 
 /*
 Collection Interface hat zwei wichtige Sub-Interfaces:
@@ -93,6 +96,22 @@ public class List_Aufgaben {
         // 长度: size()
         // 遍历: iterator, for each, for
 
+    }
+
+    @Test
+    public void test1() {
+        List list = new ArrayList();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        updateList(list);
+        System.out.println(list);
+    }
+
+    private void updateList(List list) {
+        //list.remove(2);//2是int型，不装箱，自动选择为index
+        //list.remove(new Integer(2));
+        list.remove(valueOf(2));
     }
 
 }
