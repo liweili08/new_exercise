@@ -1,15 +1,15 @@
 package collection_api;
 
-public class PersonForCollection {
+public class PersonForCollection implements Comparable {
     private String name;
     private int age;
 
-    public PersonForCollection(){}
+    public PersonForCollection() {
+    }
 
-    public PersonForCollection(String name, int age)
-    {
-        this.name=name;
-        this.age=age;
+    public PersonForCollection(String name, int age) {
+        this.name = name;
+        this.age = age;
     }
 
     public String getName()
@@ -56,5 +56,22 @@ public class PersonForCollection {
         int result = name != null ? name.hashCode() : 0;
         result = 31 * result + age;
         return result;
+    }
+
+    //按姓名,age从小到大排列
+    @Override
+    public int compareTo(Object o) {
+        if (o instanceof PersonForCollection) {
+            PersonForCollection person = (PersonForCollection) o;
+            int compare = this.name.compareTo(person.name);
+            if (compare != 0) {
+                return compare;
+            } else {
+                return Integer.compare(this.age, person.age);
+            }
+        } else {
+            throw new RuntimeException("wrong input");
+        }
+
     }
 }
