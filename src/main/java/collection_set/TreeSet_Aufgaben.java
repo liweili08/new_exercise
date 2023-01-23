@@ -2,8 +2,10 @@ package collection_set;
 
 import collection_api.PersonForCollection;
 import org.junit.Test;
+import student_aufgabe.Student;
 
 import java.util.Iterator;
+import java.util.Scanner;
 import java.util.TreeSet;
 
 public class TreeSet_Aufgaben {
@@ -18,6 +20,19 @@ public class TreeSet_Aufgaben {
                         定制排序中比较2个对象是否相同的标准为: compare方法返回0，不是equals方法
 
     */
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        TreeSet<Student> treeSet = new TreeSet<>();
+        for (int i = 0; i < 4; i++) {
+            System.out.println("Student " + i + " Name: ");
+            String name = scan.next();
+            System.out.println("Student " + i + " score:");
+            int score = scan.nextInt();
+        }
+
+
+    }
+
 
     @Test
     public void test3() {
