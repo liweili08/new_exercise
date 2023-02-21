@@ -65,8 +65,8 @@ public class Exception_Try_Catch {
             System.out.println("Hello----1");
         } catch (NumberFormatException e) {
             System.out.println("Fehler!");
-            //System.out.println(e.getMessage());
-            // e.printStackTrace();
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
         System.out.println("Hello*******2");
         System.out.println(num);
@@ -105,7 +105,7 @@ public class Exception_Try_Catch {
             int b = 0;
             System.out.println(a / b);
         } catch (ArithmeticException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
             int[] arr = new int[10];
             System.out.println(arr[10]);
         }
@@ -131,7 +131,7 @@ public class Exception_Try_Catch {
             e.printStackTrace();
             return 2;
         } finally {
-            System.out.println("miumiumiu");
+            System.out.println("miumiumiu，先执行finally");
         }
     }
 

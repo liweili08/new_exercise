@@ -31,6 +31,7 @@ public class Exception_Aufgabe1 {
         //1. NullPointerException
         //int[] array= new int[3];
         String[] array = new String[2];
+        //System.out.println(array[1]);
         System.out.println(array[1].length());
         //int[] arr = null;
         //System.out.println(arr[3]);

@@ -1,11 +1,12 @@
 package employee;
 
-public class Employee implements Comparable {
+public class Employee implements Comparable<Employee> {
     private String name;
     private int age;
     private MyDate birthday;
 
     public Employee() {
+
     }
 
     public Employee(String name, int age, MyDate birthday) {
@@ -47,12 +48,20 @@ public class Employee implements Comparable {
                 '}';
     }
 
+    //没有泛型时
+//    @Override
+//    public int compareTo(Object o) {
+//        if (o instanceof Employee) {
+//            Employee e = (Employee) o;
+//            return this.name.compareTo(e.name);
+//        }
+//        throw new RuntimeException("wrong input");
+//    }
+
+    //有泛型时
     @Override
-    public int compareTo(Object o) {
-        if (o instanceof Employee) {
-            Employee e = (Employee) o;
-            return this.name.compareTo(e.name);
-        }
-        throw new RuntimeException("wrong input");
+    public int compareTo(Employee o) {
+        return this.name.compareTo(o.name);
     }
+
 }

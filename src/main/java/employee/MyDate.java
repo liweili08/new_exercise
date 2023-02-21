@@ -1,6 +1,6 @@
 package employee;
 
-public class MyDate implements Comparable {
+public class MyDate implements Comparable<MyDate> {
     private int year;
     private int month;
     private int day;
@@ -48,21 +48,39 @@ public class MyDate implements Comparable {
                 '}';
     }
 
-    @Override
-    public int compareTo(Object o) {
-        if (o instanceof MyDate) {
-            MyDate m = (MyDate) o;
-            int diffYear = this.getYear() - m.getYear();
-            if (diffYear != 0) {
-                return diffYear;
-            }
+    //没有泛型时
+//    @Override
+//    public int compareTo(Object o) {
+//        if (o instanceof MyDate) {
+//            MyDate m = (MyDate) o;
+//            int diffYear = this.getYear() - m.getYear();
+//            if (diffYear != 0) {
+//                return diffYear;
+//            }
+//
+//            int diffMonth = this.getMonth() - m.getMonth();
+//            if (diffMonth != 0) {
+//                return diffMonth;
+//            }
+//            return this.getDay() - m.getDay();
+//        }
+//        throw new RuntimeException("wrong input");
+//    }
 
-            int diffMonth = this.getMonth() - m.getMonth();
-            if (diffMonth != 0) {
-                return diffMonth;
-            }
-            return this.getDay() - m.getDay();
+    //有泛型时
+    @Override
+    public int compareTo(MyDate m) {
+        //比较年
+        int diffYear = this.getYear() - m.getYear();
+        if (diffYear != 0) {
+            return diffYear;
         }
-        throw new RuntimeException("wrong input");
+        //比较月
+        int diffMonth = this.getMonth() - m.getMonth();
+        if (diffMonth != 0) {
+            return diffMonth;
+        }
+        //比较日
+        return this.getDay() - m.getDay();
     }
 }

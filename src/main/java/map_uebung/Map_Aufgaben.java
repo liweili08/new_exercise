@@ -10,11 +10,11 @@ Map Interface:
 
     Map 存储双列（key-value）数据
         具体的实现类: HashMap: 主要实现类，线程不安全，效率高，可存储null的key和value，底层为数组+链表+红黑树
-                        子类 LinkedHashMap:加了一对指针，保证在遍历时可按照添加元素的顺序打印元素
-                                           在有频繁遍历时用LinkedHashMap好
+                            子类 LinkedHashMap: 加了一对指针，保证在遍历时可按照添加元素的顺序打印元素
+                                                在有频繁遍历时用LinkedHashMap好
                     TreeMap: 可按照添加的key-value进行排序，是按key的自然排序或定制排序排的，底层为红黑树
                     Hashtable: 古老实现类，线程安全，效率低，不可存储null的key和value
-                        子类 Properties: 用来处理配置文件，key和value都是String型
+                              子类 Properties: 用来处理配置文件，key和value都是String型
 HashMap: key无序，不可重复，可用Set来存，value无序，可重复，用Collection存
          把key和value组合成一个Entry，Entry时无序，不可重复的，因为key不可重复
          故而Entry使用Set来存的
