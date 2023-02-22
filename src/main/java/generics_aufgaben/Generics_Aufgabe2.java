@@ -3,6 +3,7 @@ package generics_aufgaben;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Generics_Aufgabe2 {
     @Test
@@ -38,5 +39,15 @@ public class Generics_Aufgabe2 {
 
     }
 
+    @Test
+    public void test4() {
+        Order<String> order = new Order<>();
+        Integer[] array = new Integer[]{1, 2, 3, 4};
+        //泛型方法在调用时，指明泛型参数的类型，这里用了Integer，可以换成其他的类
+        List<Integer> list = order.copyFromArrayToList(array);
+        for (Integer integer : list) {
+            System.out.println(integer);
+        }
+    }
 
 }
