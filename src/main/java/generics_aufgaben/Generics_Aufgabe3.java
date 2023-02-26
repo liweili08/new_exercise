@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 //: ; ( )
-public class Generic_Aufgabe3 {
+public class Generics_Aufgabe3 {
     /*
     1. 泛型在继承方面的体现:
         类A是类B的父类，G<A>和G<B>二者不具备子父类关系，而是并列关系
