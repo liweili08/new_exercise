@@ -28,7 +28,10 @@ import java.util.function.Consumer;
             则可省略花括号和return
 
 4. Lambda表达式的本质: 作为接口的实现类的实例，接口必须是函数式接口
-   (函数式接口)
+5. 函数式接口: 只声明了一个抽象方法的接口。
+             比如 Runnable接口，有注解@FunctionalInterface
+             可通过Lambda表达式创建函数式接口的对象
+             (函数式接口的实例就是Lambda表达式)
 
 
 ; : ( ) //
