@@ -13,14 +13,37 @@ import java.util.function.Predicate;
 3. Java内置的四大核心函数式接口:
     函数式接口            参数类型 返回类型 用途
     --------------------------------------------------------
-    Consumer<T>消费型接口    T    void  对类型为T的对象应用操作，如 void accept(T t)
-    Supplier<T>供给型接口    无     T   返回类型为T的对象，如 T get()
-    Function<T，R>函数型接口  T     R   对类型为T的对象应用操作，并返回类型为R的对象，如 R applz(T t)
-    Predicate<T>判断型接口   T  boolean 判断类型为T的对象是否满足某约束并返回boolean值，如 boolean test(T t)
+    Consumer<T>消费型接口    T    void  对类型为T的对象应用操作，接口中的抽象方法为 void accept(T t)
+    Supplier<T>供给型接口    无     T   返回类型为T的对象，接口中的抽象方法为 T get()
+    Function<T, R>函数型接口  T     R   对类型为T的对象应用操作，并返回类型为R的对象，接口中的抽象方法为 R apply(T t)
+    Predicate<T>断定型接口   T  boolean 判断类型为T的对象是否满足某约束并返回boolean值，接口中的抽象方法为 boolean test(T t)
+
+除此之外还有一些变形，比如
+    函数式接口          参数类型 返回类型 用途
+    --------------------------------------------------------
+    BiFunction<T,U,R>  T,U    R     对类型为T,U的对象应用操作,返回对象为R型，接口中的抽象方法为 R apply(T t，U u)
+    --------------------------------------------------------
+    UnaryOperator<T>   T      T     对类型为T的对象进行一元运算，并返回类型为T的对象
+     (Function子接口)                接口中的抽象方法为 T apply(T t)
+     --------------------------------------------------------
+    BinaryOperator<T>  T      T     对类型为T的对象进行二元运算，并返回类型为T的对象，
+    (BiFunction子接口)               接口中的抽象方法为 T apply(T t1，T t2)
+    --------------------------------------------------------
+    BiConsumer<T,U>    T,U  void    对类型为T，U的对象应用操作，没有返回对象，接口中的抽象方法为 void accept(T t，U u)
+    --------------------------------------------------------
+    BiPredicate<T,U>   T,U  boolean 判断类型为T的对象是否满足某约束并返回boolean值，接口中的抽象方法为boolean test(T t,U u)
+    --------------------------------------------------------
+    ToIntFunction<T>        int
+    ToLongFunction<T>   T   long    分别计算int,long,double值的函数
+    ToDoubleFunction<T>     double
+    --------------------------------------------------------
+    IntFunction<R>    int     R
+    LongFunction<R>   long    R     参数分别为int,long,double类型的函数
+    DoubleFunction<R> double  R
 
 
-
-
+如果要定义的接口与上述接口的抽象方法一样，比如需要参数，返回是void，就没有必要再去定义了，
+直接用Consumer接口里的accept方法就可以了
 
 <>
 ; : ( ) //

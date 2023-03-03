@@ -7,15 +7,18 @@ public class Employee_Reference {
     private double salary;
 
     public Employee_Reference() {
+        System.out.println("空参构造器");
     }
 
     public Employee_Reference(int id) {
         this.id = id;
+        System.out.println("带id的构造器");
     }
 
     public Employee_Reference(int id, String name) {
         this.id = id;
         this.name = name;
+        System.out.println("带id和name的构造器");
     }
 
     public Employee_Reference(int id, String name, int age, double salary) {
@@ -23,6 +26,7 @@ public class Employee_Reference {
         this.name = name;
         this.age = age;
         this.salary = salary;
+        //System.out.println("全参构造器");
     }
 
     public int getId() {
