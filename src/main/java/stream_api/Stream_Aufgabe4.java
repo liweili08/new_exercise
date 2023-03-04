@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
-Stream的中间操作三 paix
+Stream的中间操作三 排序
 sorted() 产生一个新流，其中按自然序排序
 sorted(Comparator com)  产生一个新流，其中按比较器顺序排序
 
