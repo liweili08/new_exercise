@@ -28,4 +28,23 @@ public class StringAufgabenDrei {
         //6) String[] split(String regex，int limit)
         // 根据给定正则表达式的匹配拆分当前字符串，最多不超过limit个，若超过，剩下的全部放入最后一个元素里
     }
+
+    @Test
+    public void test2() {
+        char[] a = {'b', 'o', 'y'};
+        char a1[] = {'b', 'i', 'g'};
+        char[] a2 = new char[2];
+        a2[0] = 'a';
+        a2[1] = 'b';
+        String s = new String(a2);
+        System.out.println(s);
+    }
+
+    @Test
+    public void test3() {
+        String s = "ads112";
+        char[] array = s.toCharArray();
+        System.out.println(array.length);
+
+    }
 }

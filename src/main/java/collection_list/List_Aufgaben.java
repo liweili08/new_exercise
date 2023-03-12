@@ -56,12 +56,14 @@ public class List_Aufgaben {
         //Collection中的15个方法依然可用
         //因为ArrayList是有序的，就有了索引的方法
         //Methode 1: add(int index, Object obj)在index位置插入obj元素
-        list.add(1,"BB");
+        list.add(1, "BB");
         System.out.println(list);
 
         //Methode 2: addAll(int index, Collection c)在index位置插入collection c的所有元素
         List list1 = Arrays.asList(1, 2, 3);
-        list.addAll(list1); //不写index默认加到最后
+        ArrayList list2 = new ArrayList();
+        System.out.println(list.addAll(list1)); //不写index默认加到最后
+        System.out.println(list.addAll(list2));
         System.out.println(list);
 
         //Methode 3: get(int index) 获取指定位置的元素
@@ -80,7 +82,7 @@ public class List_Aufgaben {
         System.out.println(list);
 
         //Methode 7: set(int index, Object obj) 设置指定位置的元素为obj
-        list.set(1,"CC");
+        System.out.println(list.set(1, "CC"));
         System.out.println(list);
 
         //Methode 8: subList(int fromIndex, in toIndex) 返回从fromIndex到toIndex的左闭右开的子集

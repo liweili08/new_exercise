@@ -9,8 +9,22 @@ public class Collection_Api {
     @Test
     public void test1() {
         Collection coll = new ArrayList();
+
+        HashSet set = new HashSet();
+        System.out.println(set.add("AA"));
+        System.out.println(set.add("BB"));
+        System.out.println(set);
+        HashSet set1 = new HashSet();
+        System.out.println(set1.add("BB"));
+        System.out.println(set1.add("AAa"));
+        System.out.println(set1);
+        System.out.println(set.addAll(set1));
+        System.out.println(set);
+
         // Methode 1: add(E e) (füge e in coll hinzu)
         coll.add("AA");
+        System.out.println(coll.add("BBC"));
+        System.out.println(coll.add("BBC"));
         coll.add("BB");
         coll.add(123);
         coll.add(new Date());

@@ -33,23 +33,31 @@ public class Collections_Aufgaben {
         list.add(-97);
         list.add(0);
 
-//        System.out.println(list);
+        System.out.println(list);
 //        Collections.reverse(list); //reverse方法是void，说明list本身被改了
 //        System.out.println(list);
 //        Collections.shuffle(list);
 //        System.out.println(list);
 
-//        Collections.sort(list);
-//        System.out.println(list);
-//        Collections.swap(list,1,2);
-//        System.out.println(list);
+        Collections.sort(list);
+        System.out.println(list);
+        Collections.swap(list, 1, 2);
+        System.out.println(list);
 
 // Exception: java.lang.IndexOutOfBoundsException: Source does not fit in dest
 //        List dest = new ArrayList();
 //        Collections.copy(dest,list);
 //        System.out.println(dest);
         List dest = Arrays.asList(new Object[list.size()]);
-        System.out.println(dest.size());
+        ArrayList arrayList = new ArrayList(dest);
+        System.out.println("arrayList ist " + arrayList + arrayList.size());
+        arrayList.add(1111111);
+        System.out.println("arrayList: " + arrayList);
+        Collections.copy(arrayList, list);
+        System.out.println("new arrayList:" + arrayList);
+
+        System.out.println("asList: " + dest + dest.size());
+
         Collections.copy(dest, list);
         System.out.println(dest);
         // list1是线程安全的
